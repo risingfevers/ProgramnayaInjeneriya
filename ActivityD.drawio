@@ -1,0 +1,149 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Диаграмма действий" id="ActivityDiagram">
+    <mxGraphModel dx="983" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="act3" value="Получение электронного талона" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="235" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act4" value="Ожидание вызова" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="305" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="decision1" value="Клиента вызвали?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="395" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="flow3" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="1" source="act2" target="act3" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="205" as="sourcePoint" />
+            <mxPoint x="200" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow4" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="1" source="act3" target="act4" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="275" as="sourcePoint" />
+            <mxPoint x="200" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow5" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="1" source="act4" target="decision1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="345" as="sourcePoint" />
+            <mxPoint x="200" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow7" value="Нет" style="endArrow=block;endFill=1;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="decision1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="120" y="435" as="sourcePoint" />
+            <mxPoint x="160" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow12" value="Да" style="endArrow=block;endFill=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="decision2" target="act8" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="660" y="575" as="sourcePoint" />
+            <mxPoint x="430" y="625" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="swimlane1" value="Клиент" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="80" width="310" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="act1" value="Клиент подходит к терминалу" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane1" vertex="1">
+          <mxGeometry x="70" y="30" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="start1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="swimlane1" vertex="1">
+          <mxGeometry y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="flow1" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="swimlane1" source="start1" target="act1" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="90" y="40" as="sourcePoint" />
+            <mxPoint x="190" y="-60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act2" value="Выбор услуги" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane1" vertex="1">
+          <mxGeometry x="70" y="90" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow2" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="swimlane1" source="act1" target="act2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="55" as="sourcePoint" />
+            <mxPoint x="150" y="85" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="act7" value="Клиент подходит к окну" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane1" vertex="1">
+          <mxGeometry x="70" y="420" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane3" value="Оператор" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="650" width="310" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="act8" value="Обслуживание клиента" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane3" vertex="1">
+          <mxGeometry x="70" y="155" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act9" value="Завершение обслуживания" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane3" vertex="1">
+          <mxGeometry x="70" y="235" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow14" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="swimlane3" source="act8" target="act9" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="380" y="165" as="sourcePoint" />
+            <mxPoint x="380" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="end2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="swimlane3" vertex="1">
+          <mxGeometry x="135" y="320" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="flow15" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="swimlane3" source="act9" target="end2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="380" y="235" as="sourcePoint" />
+            <mxPoint x="315" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="swimlane4" value="Табло" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="650" width="320" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane2" value="Система" style="swimlane;whiteSpace=wrap;html=1;" parent="swimlane4" vertex="1">
+          <mxGeometry y="-570" width="320" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="decision2" value="Клиент подошел?" style="rhombus;whiteSpace=wrap;html=1;" parent="swimlane2" vertex="1">
+          <mxGeometry x="120" y="400" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act6" value="Обновление информации на табло" style="rounded=0;whiteSpace=wrap;html=1;" parent="swimlane4" vertex="1">
+          <mxGeometry x="80" y="60" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="flow10" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="1" source="act6" target="act7" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="430" y="505" as="sourcePoint" />
+            <mxPoint x="430" y="535" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow11" value="" style="endArrow=block;endFill=1;html=1;rounded=0;" parent="1" source="act7" target="decision2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="510" y="555" as="sourcePoint" />
+            <mxPoint x="580" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow6" value="Да" style="endArrow=block;endFill=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="decision1" target="act6" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="321.1199999999999" y="429.99999999999994" as="sourcePoint" />
+            <mxPoint x="620" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow13" value="Нет" style="endArrow=block;endFill=1;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="decision2" target="end2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="580" y="615" as="sourcePoint" />
+            <mxPoint x="620" y="900" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="560" />
+              <mxPoint x="600" y="985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
