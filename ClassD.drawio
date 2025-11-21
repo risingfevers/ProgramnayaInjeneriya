@@ -1,183 +1,339 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
-  <diagram name="Система электронных очередей" id="SystemElectronicQueues">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.0">
+  <diagram name="Усложненная система электронных очередей" id="ComplexElectronicQueueSystem">
     <mxGraphModel dx="1426" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="WindowStatus" value="" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" parent="1" vertex="1">
-          <mxGeometry x="40" y="40" width="120" height="110" as="geometry" />
+        <mxCell id="WindowStatus" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="110" width="120" x="50" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="ClientStatus" value="" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" parent="1" vertex="1">
-          <mxGeometry x="200" y="40" width="140" height="110" as="geometry" />
+        <mxCell id="ClientStatus" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="110" width="140" x="200" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="OperatorStatus" value="" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" parent="1" vertex="1">
-          <mxGeometry x="380" y="40" width="140" height="110" as="geometry" />
+        <mxCell id="OperatorStatus" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="110" width="140" x="380" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="TerminalStatus" value="" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" parent="1" vertex="1">
-          <mxGeometry x="560" y="40" width="140" height="100" as="geometry" />
+        <mxCell id="TerminalStatus" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="100" width="140" x="560" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="Service" value="&lt;b&gt;Услуга&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- description: string&lt;/div&gt;&lt;div&gt;- averageServiceTime: int&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ isAvailable()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="190" width="200" height="120" as="geometry" />
+        <mxCell id="UserRole" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="100" width="140" x="740" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="Window" value="&lt;b&gt;Окно&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- number: string&lt;/div&gt;&lt;div&gt;- status: WindowStatus&lt;/div&gt;&lt;div&gt;- currentClient: Client&lt;/div&gt;&lt;div&gt;- operator: Operator&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ callNext()&lt;/div&gt;&lt;div&gt;+ changeStatus()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1061" y="375" width="200" height="130" as="geometry" />
+        <mxCell id="NotificationType" parent="1" style="shape=umlEnumeration;verticalLabelPosition=bottom;verticalAlign=top;html=1;points=[];align=center;spacingTop=-6;" value="" vertex="1">
+          <mxGeometry height="100" width="160" x="920" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="DisplayBoard" value="&lt;b&gt;Табло&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- location: string&lt;/div&gt;&lt;div&gt;- currentCall: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ updateDisplay()&lt;/div&gt;&lt;div&gt;+ showCall()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1081" y="200" width="160" height="110" as="geometry" />
+        <mxCell id="Service" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Услуга&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- description: string&lt;/div&gt;&lt;div&gt;- averageServiceTime: int&lt;/div&gt;&lt;div&gt;- isActive: boolean&lt;/div&gt;&lt;div&gt;- category: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ isAvailable(): boolean&lt;/div&gt;&lt;div&gt;+ getAverageWaitingTime(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="200" x="780" y="640" as="geometry" />
         </mxCell>
-        <mxCell id="Operator" value="&lt;b&gt;Оператор&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- specialization: List&amp;lt;Service&amp;gt;&lt;/div&gt;&lt;div&gt;- status: OperatorStatus&lt;/div&gt;&lt;div&gt;- currentWindow: Window&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ callClient()&lt;/div&gt;&lt;div&gt;+ changeStatus()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="690" y="190" width="200" height="130" as="geometry" />
+        <mxCell id="Branch" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Office&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- address: string&lt;/div&gt;&lt;div&gt;- phone: string&lt;/div&gt;&lt;div&gt;- workingHours: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getReports(): List&amp;lt;Report&amp;gt;&lt;/div&gt;&lt;div&gt;+ getStatistics(): Statistics&lt;/div&gt;&lt;div&gt;+ getActiveServices(): List&amp;lt;Service&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="200" x="480" y="450" as="geometry" />
         </mxCell>
-        <mxCell id="Administrator" value="&lt;b&gt;Администратор&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- permissions: List&amp;lt;Permission&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ manageServices()&lt;/div&gt;&lt;div&gt;+ manageOperators()&lt;/div&gt;&lt;div&gt;+ generateReports()&lt;/div&gt;&lt;div&gt;+ configureWindows()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="40" y="560" width="200" height="130" as="geometry" />
+        <mxCell id="Client" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Client&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- ticketNumber: string&lt;/div&gt;&lt;div&gt;- service: Service&lt;/div&gt;&lt;div&gt;- status: ClientStatus&lt;/div&gt;&lt;div&gt;- arrivalTime: DateTime&lt;/div&gt;&lt;div&gt;- serviceStartTime: DateTime&lt;/div&gt;&lt;div&gt;- serviceEndTime: DateTime&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getWaitingTime(): int&lt;/div&gt;&lt;div&gt;+ getServiceTime(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="171" width="200" x="820" y="1259.5" as="geometry" />
         </mxCell>
-        <mxCell id="Report" value="&lt;b&gt;Отчет&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- type: ReportType&lt;/div&gt;&lt;div&gt;- period: Period&lt;/div&gt;&lt;div&gt;- data: ReportData&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ generate()&lt;/div&gt;&lt;div&gt;+ export()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="390" y="560" width="180" height="120" as="geometry" />
+        <mxCell id="Ticket" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Ticket&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- number: string&lt;/div&gt;&lt;div&gt;- client: Client&lt;/div&gt;&lt;div&gt;- service: Service&lt;/div&gt;&lt;div&gt;- branch: Branch&lt;/div&gt;&lt;div&gt;- issueTime: DateTime&lt;/div&gt;&lt;div&gt;- estimatedWaitTime: int&lt;/div&gt;&lt;div&gt;- isActive: boolean&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getCurrentPosition(): int&lt;/div&gt;&lt;div&gt;+ cancel(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="200" x="430" y="1250" as="geometry" />
         </mxCell>
-        <mxCell id="SelfServiceTerminal" value="&lt;b&gt;ТерминалСамообслуживания&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- location: string&lt;/div&gt;&lt;div&gt;- status: TerminalStatus&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ showServices()&lt;/div&gt;&lt;div&gt;+ registerClient()&lt;/div&gt;&lt;div&gt;+ issueTicket()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1061" y="560" width="200" height="120" as="geometry" />
+        <mxCell id="Queue" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Queue&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- branch: Branch&lt;/div&gt;&lt;div&gt;- service: Service&lt;/div&gt;&lt;div&gt;- activeTickets: List&amp;lt;Ticket&amp;gt;&lt;/div&gt;&lt;div&gt;- servedTickets: List&amp;lt;Ticket&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ addTicket(ticket: Ticket): void&lt;/div&gt;&lt;div&gt;+ getNextTicket(): Ticket&lt;/div&gt;&lt;div&gt;+ getQueueLength(): int&lt;/div&gt;&lt;div&gt;+ getAverageWaitTime(): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="200" x="430" y="1010" as="geometry" />
         </mxCell>
-        <mxCell id="link1" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" parent="1" source="Branch" target="Window" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="440" y="320" as="sourcePoint" />
-            <mxPoint x="540" y="220" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="QueueManager" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;QueueManager&lt;/b&gt;&lt;div&gt;- queues: Map&amp;lt;String, Queue&amp;gt;&lt;/div&gt;&lt;div&gt;- distributionStrategy: DistributionStrategy&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ createTicket(service: Service, branch: Branch): Ticket&lt;/div&gt;&lt;div&gt;+ assignClientToWindow(client: Client, window: Window): boolean&lt;/div&gt;&lt;div&gt;+ findOptimalWindow(service: Service): Window&lt;/div&gt;&lt;div&gt;+ redistributeQueue(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="240" x="40" y="1020" as="geometry" />
         </mxCell>
-        <mxCell id="link1_label1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link1" vertex="1" connectable="0">
-          <mxGeometry x="0.2" y="1" relative="1" as="geometry">
-            <mxPoint x="2" y="-4" as="offset" />
-          </mxGeometry>
+        <mxCell id="NotificationService" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;NotificationService&lt;/b&gt;&lt;div&gt;- websocketConnections: Map&amp;lt;String, WebSocket&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ sendCallNotification(ticket: Ticket, window: Window): void&lt;/div&gt;&lt;div&gt;+ updateDisplayBoards(branch: Branch): void&lt;/div&gt;&lt;div&gt;+ sendStatisticsReport(report: Report): void&lt;/div&gt;&lt;div&gt;+ broadcastSystemAlert(message: string): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="220" x="30" y="490" as="geometry" />
         </mxCell>
-        <mxCell id="link1_label2" value="many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link1" vertex="1" connectable="0">
-          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
-            <mxPoint x="2" y="-4" as="offset" />
-          </mxGeometry>
+        <mxCell id="AnalyticsService" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;AnalyticsService&lt;/b&gt;&lt;div&gt;- dataRepository: DataRepository&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ generateDailyReport(branch: Branch): Report&lt;/div&gt;&lt;div&gt;+ generateWeeklyReport(branch: Branch): Report&lt;/div&gt;&lt;div&gt;+ generateMonthlyReport(branch: Branch): Report&lt;/div&gt;&lt;div&gt;+ calculateBranchEfficiency(branch: Branch): float&lt;/div&gt;&lt;div&gt;+ predictPeakHours(branch: Branch): Map&amp;lt;String, int&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="220" x="1080" y="470" as="geometry" />
         </mxCell>
-        <mxCell id="link2" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" parent="1" source="Branch" target="Service" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
+        <mxCell id="AuthService" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;AuthService&lt;/b&gt;&lt;div&gt;- userRepository: UserRepository&lt;/div&gt;&lt;div&gt;- jwtSecret: string&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ login(username: string, password: string): string&lt;/div&gt;&lt;div&gt;+ validateToken(token: string): boolean&lt;/div&gt;&lt;div&gt;+ getUserRole(userId: string): UserRole&lt;/div&gt;&lt;div&gt;+ hasPermission(userId: string, permission: string): boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="185" width="200" x="840" y="212.5" as="geometry" />
+        </mxCell>
+        <mxCell id="DataRepository" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;DataRepository&lt;/b&gt;&lt;div&gt;- dbConnection: Connection&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ saveTicket(ticket: Ticket): void&lt;/div&gt;&lt;div&gt;+ updateClientStatus(client: Client): void&lt;/div&gt;&lt;div&gt;+ getBranchStatistics(branchId: string, period: string): Statistics&lt;/div&gt;&lt;div&gt;+ getOperatorWorkload(operatorId: string): WorkloadData&lt;/div&gt;&lt;div&gt;+ backupData(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="185" width="200" x="1090" y="212.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Administrator" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Administrator&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- email: string&lt;/div&gt;&lt;div&gt;- role: UserRole&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ manageServices(): void&lt;/div&gt;&lt;div&gt;+ manageOperators(): void&lt;/div&gt;&lt;div&gt;+ generateReports(): void&lt;/div&gt;&lt;div&gt;+ configureBranches(): void&lt;/div&gt;&lt;div&gt;+ systemConfiguration(): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="200" x="480" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Window" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Window&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- number: string&lt;/div&gt;&lt;div&gt;- status: WindowStatus&lt;/div&gt;&lt;div&gt;- currentClient: Client&lt;/div&gt;&lt;div&gt;- operator: Operator&lt;/div&gt;&lt;div&gt;- supportedServices: List&amp;lt;Service&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ callNext(): void&lt;/div&gt;&lt;div&gt;+ changeStatus(status: WindowStatus): void&lt;/div&gt;&lt;div&gt;+ canHandleService(service: Service): boolean&lt;/div&gt;" vertex="1">
+          <mxGeometry height="185" width="200" x="480" y="772.5" as="geometry" />
+        </mxCell>
+        <mxCell id="DisplayBoard" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Screen&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- location: string&lt;/div&gt;&lt;div&gt;- currentCalls: List&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;- branch: Branch&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ updateDisplay(): void&lt;/div&gt;&lt;div&gt;+ showCall(ticket: Ticket, window: Window): void&lt;/div&gt;&lt;div&gt;+ clearCall(window: Window): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="180" x="50" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="Report" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Report&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- type: ReportType&lt;/div&gt;&lt;div&gt;- period: Period&lt;/div&gt;&lt;div&gt;- generatedAt: DateTime&lt;/div&gt;&lt;div&gt;- data: ReportData&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ generate(): void&lt;/div&gt;&lt;div&gt;+ export(format: string): void&lt;/div&gt;&lt;div&gt;+ sendToEmail(email: string): void&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="180" x="50" y="222.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Statistics" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Statistics&lt;/b&gt;&lt;br&gt;&lt;div&gt;- totalClients: int&lt;/div&gt;&lt;div&gt;- averageWaitTime: int&lt;/div&gt;&lt;div&gt;- averageServiceTime: int&lt;/div&gt;&lt;div&gt;- operatorEfficiency: Map&amp;lt;String, float&amp;gt;&lt;/div&gt;&lt;div&gt;- peakHours: Map&amp;lt;String, int&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ calculateMetrics(): void&lt;/div&gt;&lt;div&gt;+ compareWithPrevious(previous: Statistics): ComparisonResult&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="200" x="1090" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="link1" edge="1" parent="1" source="Branch" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Service" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
             <mxPoint x="240" y="260" as="sourcePoint" />
             <mxPoint x="280" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link2_label1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link2" vertex="1" connectable="0">
-          <mxGeometry x="0.2" y="1" relative="1" as="geometry">
+        <mxCell id="link1_label1" connectable="0" parent="link1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link2_label2" value="many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link2" vertex="1" connectable="0">
-          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+        <mxCell id="link1_label2" connectable="0" parent="link1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link3" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" parent="1" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="580" y="406.10406754772384" as="sourcePoint" />
-            <mxPoint x="1081" y="270.0027459618209" as="targetPoint" />
-            <Array as="points" />
+        <mxCell id="link2" edge="1" parent="1" source="Branch" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Window" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="440" y="320" as="sourcePoint" />
+            <mxPoint x="540" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link3_label1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link3" vertex="1" connectable="0">
-          <mxGeometry x="0.2" y="1" relative="1" as="geometry">
+        <mxCell id="link2_label1" connectable="0" parent="link2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link3_label2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link3" vertex="1" connectable="0">
-          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+        <mxCell id="link2_label2" connectable="0" parent="link2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link4" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" parent="1" source="Branch" target="SelfServiceTerminal" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
+        <mxCell id="link3" edge="1" parent="1" source="Branch" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="SelfServiceTerminal" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
             <mxPoint x="240" y="280" as="sourcePoint" />
             <mxPoint x="500" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link4_label1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link4" vertex="1" connectable="0">
-          <mxGeometry x="0.2" y="1" relative="1" as="geometry">
+        <mxCell id="link3_label1" connectable="0" parent="link3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link4_label2" value="many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link4" vertex="1" connectable="0">
-          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+        <mxCell id="link3_label2" connectable="0" parent="link3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link9" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" parent="1" source="Operator" target="Service" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="620" y="445" as="sourcePoint" />
-            <mxPoint x="480" y="320" as="targetPoint" />
+        <mxCell id="link4" edge="1" parent="1" source="Branch" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="DisplayBoard" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="580" y="406" as="sourcePoint" />
+            <mxPoint x="1081" y="270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link9_label1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link9" vertex="1" connectable="0">
-          <mxGeometry x="0.2" y="1" relative="1" as="geometry">
+        <mxCell id="link4_label1" connectable="0" parent="link4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link9_label2" value="many" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="link9" vertex="1" connectable="0">
-          <mxGeometry x="0.8" y="1" relative="1" as="geometry">
+        <mxCell id="link4_label2" connectable="0" parent="link4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
             <mxPoint x="2" y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="link10" value="uses" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SelfServiceTerminal" target="Branch" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="600" y="620" as="sourcePoint" />
-            <mxPoint x="240" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="link11" value="manages" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" parent="1" source="Administrator" target="Branch" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="240" y="625" as="sourcePoint" />
-            <mxPoint x="240" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="link12" value="creates" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" parent="1" source="Administrator" target="Report" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="240" y="645" as="sourcePoint" />
-            <mxPoint x="370" y="645" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="link13" value="contains data about" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" parent="1" source="Report" target="Branch" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="370" y="620" as="sourcePoint" />
-            <mxPoint x="240" y="340" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="link14" value="displays status" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" parent="1" source="DisplayBoard" target="Window" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="760" y="310" as="sourcePoint" />
-            <mxPoint x="720" y="310" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Iph7AhpTGlBGImt9ZWPn-1" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;WindowStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;FREE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BUSY&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BREAK&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;CLOSED&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="70" y="80" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Iph7AhpTGlBGImt9ZWPn-2" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;ClientStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;WAITING&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;IN_SERVICE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;SERVED&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;NO_SHOW&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="240" y="80" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Iph7AhpTGlBGImt9ZWPn-4" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;OperatorStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;AVAILABLE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BUSY&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;ON_BREAK&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;INACTIVE&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="420" y="75" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Iph7AhpTGlBGImt9ZWPn-5" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;TerminalStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;WORKING&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;NOT_WORKING&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;UNDER_MAINTENANCE&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="600" y="80" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Branch" value="&lt;b&gt;Отделение&lt;/b&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- address: string&lt;/div&gt;&lt;div&gt;- configuration: Configuration&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ getReports()&lt;/div&gt;&lt;div&gt;+ getStatistics()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="380" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="_o8fSG3uaClkg24x4iSJ-5" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Operator" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
+        <mxCell id="link5" edge="1" parent="1" source="Operator" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Window" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
             <mxPoint x="870" y="360" as="sourcePoint" />
             <mxPoint x="1060" y="380" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_o8fSG3uaClkg24x4iSJ-6" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="_o8fSG3uaClkg24x4iSJ-5" vertex="1" connectable="0">
-          <mxGeometry x="0.5679" y="1" relative="1" as="geometry">
+        <mxCell id="link5_label1" connectable="0" parent="link5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.5679" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_o8fSG3uaClkg24x4iSJ-7" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="_o8fSG3uaClkg24x4iSJ-5" vertex="1" connectable="0">
-          <mxGeometry x="-0.7743" y="1" relative="1" as="geometry">
+        <mxCell id="link5_label2" connectable="0" parent="link5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7743" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="link6" edge="1" parent="1" source="Operator" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Service" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="620" y="445" as="sourcePoint" />
+            <mxPoint x="480" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link6_label1" connectable="0" parent="link6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link6_label2" connectable="0" parent="link6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link7" edge="1" parent="1" source="SelfServiceTerminal" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="Branch" value="uses">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="600" y="620" as="sourcePoint" />
+            <mxPoint x="240" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link8" edge="1" parent="1" source="Administrator" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Branch" value="manages">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="240" y="625" as="sourcePoint" />
+            <mxPoint x="240" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link9" edge="1" parent="1" source="Administrator" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Report" value="creates">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="240" y="645" as="sourcePoint" />
+            <mxPoint x="370" y="645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link10" edge="1" parent="1" source="Report" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Branch" value="contains data about">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="370" y="620" as="sourcePoint" />
+            <mxPoint x="240" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link11" edge="1" parent="1" source="DisplayBoard" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Window" value="displays status">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="760" y="310" as="sourcePoint" />
+            <mxPoint x="720" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link12" edge="1" parent="1" source="QueueManager" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Queue" value="manages">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="280" y="480" as="sourcePoint" />
+            <mxPoint x="1080" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link13" edge="1" parent="1" source="NotificationService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="DisplayBoard" value="notifies">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="540" y="475" as="sourcePoint" />
+            <mxPoint x="840" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link14" edge="1" parent="1" source="AnalyticsService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="DataRepository" value="uses">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="800" y="480" as="sourcePoint" />
+            <mxPoint x="1160" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link15" edge="1" parent="1" source="AuthService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Administrator" value="authenticates">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="940" y="475" as="sourcePoint" />
+            <mxPoint x="240" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link16" edge="1" parent="1" source="SelfServiceTerminal" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="Operator" value="authenticates">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="720" />
+              <mxPoint x="1040" y="840" />
+            </Array>
+            <mxPoint x="940" y="500" as="sourcePoint" />
+            <mxPoint x="380" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link17" edge="1" parent="1" source="Queue" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Ticket" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="1180" y="280" as="sourcePoint" />
+            <mxPoint x="940" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link17_label1" connectable="0" parent="link17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link17_label2" connectable="0" parent="link17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="many" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link18" edge="1" parent="1" source="Ticket" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;startArrow=diamondThin;startFill=1;startSize=20;" target="Client" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="940" y="280" as="sourcePoint" />
+            <mxPoint x="700" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link18_label1" connectable="0" parent="link18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.2" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link18_label2" connectable="0" parent="link18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.8" y="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link19" edge="1" parent="1" source="AnalyticsService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Statistics" value="generates">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="700" y="480" as="sourcePoint" />
+            <mxPoint x="360" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link20" edge="1" parent="1" source="Operator" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Report" value="generates">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="1000" />
+              <mxPoint x="360" y="520" />
+            </Array>
+            <mxPoint x="700" y="500" as="sourcePoint" />
+            <mxPoint x="130" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link21" edge="1" parent="1" source="NotificationService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Report" value="sends">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="430" y="475" as="sourcePoint" />
+            <mxPoint x="130" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-1" edge="1" parent="1" source="AnalyticsService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="Operator" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="880" />
+            </Array>
+            <mxPoint x="580" y="557" as="sourcePoint" />
+            <mxPoint x="220" y="807" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Operator" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;Operator&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- name: string&lt;/div&gt;&lt;div&gt;- specialization: List&amp;lt;Service&amp;gt;&lt;/div&gt;&lt;div&gt;- status: OperatorStatus&lt;/div&gt;&lt;div&gt;- currentWindow: Window&lt;/div&gt;&lt;div&gt;- workload: int&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ callNextClient(): void&lt;/div&gt;&lt;div&gt;+ changeStatus(status: OperatorStatus): void&lt;/div&gt;&lt;div&gt;+ completeService(): void&lt;/div&gt;&lt;div&gt;+ getWorkloadStatistics(): WorkloadData&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="780" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-2" edge="1" parent="1" source="AuthService" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;dashed=1;" target="SelfServiceTerminal" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="932" y="398" as="sourcePoint" />
+            <mxPoint x="889" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SelfServiceTerminal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;b&gt;TerminalSelfService&lt;/b&gt;&lt;br&gt;&lt;div&gt;- id: string&lt;/div&gt;&lt;div&gt;- location: string&lt;/div&gt;&lt;div&gt;- status: TerminalStatus&lt;/div&gt;&lt;div&gt;- branch: Branch&lt;/div&gt;&lt;hr&gt;&lt;div&gt;+ showServices(): List&amp;lt;Service&amp;gt;&lt;/div&gt;&lt;div&gt;+ registerClient(service: Service): Ticket&lt;/div&gt;&lt;div&gt;+ issueTicket(ticket: Ticket): void&lt;/div&gt;&lt;div&gt;+ getQueuePosition(ticket: Ticket): int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="200" x="840" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;WindowStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;FREE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BUSY&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BREAK&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;CLOSED&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="80" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;ClientStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;WAITING&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;IN_SERVICE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;SERVED&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;NO_SHOW&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="240" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;OperatorStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;AVAILABLE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BUSY&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;ON_BREAK&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;INACTIVE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="420" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;OperatorStatus&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;AVAILABLE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;BUSY&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;ON_BREAK&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;INACTIVE&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;UserRole&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;ADMIN&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;OPERATOR&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;ANALYST&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;SUPERVISOR&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b style=&quot;text-wrap-mode: nowrap;&quot;&gt;NotificationType&lt;/b&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;CALL_CLIENT&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;QUEUE_UPDATE&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;SYSTEM_ALERT&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;STATISTICS_REPORT&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="970" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="HSLbeWa6EISLW_eZ2Hr7-18" edge="1" parent="1" source="HSLbeWa6EISLW_eZ2Hr7-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="HSLbeWa6EISLW_eZ2Hr7-8">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
