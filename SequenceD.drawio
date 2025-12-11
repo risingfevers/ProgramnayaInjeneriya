@@ -1,281 +1,247 @@
-<mxfile host="app.diagrams.net">
-    <diagram name="Sequence Diagram - Electronic Queue System" id="SequenceDiagram">
-        <mxGraphModel dx="1662" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                
-                <!-- Participants (Actors) -->
-                <mxCell id="Client" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="120" width="30" height="60" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="Terminal" value="SelfServiceTerminal" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="100" width="120" height="800" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="QueueManager" value="QueueManager" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="100" width="120" height="800" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="DataRepository" value="DataRepository" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="440" y="100" width="120" height="800" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="NotificationService" value="NotificationService" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="100" width="120" height="800" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="DisplayBoard" value="DisplayBoard" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="760" y="100" width="100" height="800" as="geometry"/>
-                </mxCell>
-                
-                <mxCell id="Operator" value="Operator" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="900" y="100" width="100" height="800" as="geometry"/>
-                </mxCell>
-
-                <!-- Lifelines -->
-                <mxCell id="lifeline_client" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlActor;" parent="1" source="Client" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="55" y="180" as="sourcePoint"/>
-                        <mxPoint x="55" y="880" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_terminal" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="Terminal" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="60" y="0" as="sourcePoint"/>
-                        <mxPoint x="60" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_queuemanager" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="QueueManager" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="60" y="0" as="sourcePoint"/>
-                        <mxPoint x="60" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_repository" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="DataRepository" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="60" y="0" as="sourcePoint"/>
-                        <mxPoint x="60" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_notification" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="NotificationService" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="60" y="0" as="sourcePoint"/>
-                        <mxPoint x="60" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_display" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="DisplayBoard" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="50" y="0" as="sourcePoint"/>
-                        <mxPoint x="50" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                
-                <mxCell id="lifeline_operator" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" parent="Operator" edge="1">
-                    <mxGeometry width="50" height="750" relative="1" as="geometry">
-                        <mxPoint x="50" y="0" as="sourcePoint"/>
-                        <mxPoint x="50" y="750" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- Messages - Ticket Issuance Scenario -->
-
-                <!-- 1. Client approaches terminal -->
-                <mxCell id="msg1" value="1: approachTerminal()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="Client" target="Terminal" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="55" y="200" as="sourcePoint"/>
-                        <mxPoint x="180" y="200" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 2. Request services list -->
-                <mxCell id="msg2" value="2: getAvailableServices()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="Terminal" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="180" y="240" as="sourcePoint"/>
-                        <mxPoint x="340" y="240" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 3. Get services from database -->
-                <mxCell id="msg3" value="3: retrieveServices()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="QueueManager" target="DataRepository" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="280" as="sourcePoint"/>
-                        <mxPoint x="500" y="280" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 4. Return services list -->
-                <mxCell id="msg4" value="4: return: List&amp;lt;Service&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="DataRepository" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="500" y="320" as="sourcePoint"/>
-                        <mxPoint x="340" y="320" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 5. Display services -->
-                <mxCell id="msg5" value="5: return: List&amp;lt;Service&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="QueueManager" target="Terminal" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="360" as="sourcePoint"/>
-                        <mxPoint x="180" y="360" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 6. Select service -->
-                <mxCell id="msg6" value="6: selectService(serviceId)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="Client" target="Terminal" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="55" y="400" as="sourcePoint"/>
-                        <mxPoint x="180" y="400" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 7. Register in queue -->
-                <mxCell id="msg7" value="7: registerInQueue(serviceId)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="Terminal" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="180" y="440" as="sourcePoint"/>
-                        <mxPoint x="340" y="440" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 8. Create ticket -->
-                <mxCell id="msg8" value="8: createTicket(serviceId)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="QueueManager" target="DataRepository" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="480" as="sourcePoint"/>
-                        <mxPoint x="500" y="480" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 9. Save ticket -->
-                <mxCell id="msg9" value="9: saveTicket(ticket)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="DataRepository" target="DataRepository" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="490" y="520" as="sourcePoint"/>
-                        <mxPoint x="510" y="520" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 10. Return ticket -->
-                <mxCell id="msg10" value="10: return: Ticket" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="DataRepository" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="500" y="560" as="sourcePoint"/>
-                        <mxPoint x="340" y="560" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 11. Issue ticket -->
-                <mxCell id="msg11" value="11: return: Ticket" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="QueueManager" target="Terminal" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="600" as="sourcePoint"/>
-                        <mxPoint x="180" y="600" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 12. Receive ticket -->
-                <mxCell id="msg12" value="12: receiveTicket()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="Terminal" target="Client" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="180" y="640" as="sourcePoint"/>
-                        <mxPoint x="55" y="640" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- Messages - Client Calling Scenario -->
-
-                <!-- 13. Operator calls next client -->
-                <mxCell id="msg13" value="13: callNextClient()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="Operator" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="950" y="240" as="sourcePoint"/>
-                        <mxPoint x="340" y="240" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 14. Get next ticket -->
-                <mxCell id="msg14" value="14: getNextInQueue()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="QueueManager" target="DataRepository" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="680" as="sourcePoint"/>
-                        <mxPoint x="500" y="680" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 15. Return next client -->
-                <mxCell id="msg15" value="15: return: Ticket" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="DataRepository" target="QueueManager" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="500" y="720" as="sourcePoint"/>
-                        <mxPoint x="340" y="720" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 16. Notify about call -->
-                <mxCell id="msg16" value="16: notifyCall(ticket, window)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="QueueManager" target="NotificationService" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="340" y="760" as="sourcePoint"/>
-                        <mxPoint x="660" y="760" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 17. Update display board -->
-                <mxCell id="msg17" value="17: updateDisplay(ticket, window)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="NotificationService" target="DisplayBoard" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="660" y="800" as="sourcePoint"/>
-                        <mxPoint x="810" y="800" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- 18. Display call -->
-                <mxCell id="msg18" value="18: displayCall()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="DisplayBoard" target="DisplayBoard" edge="1">
-                    <mxGeometry width="50" height="100" relative="1" as="geometry">
-                        <mxPoint x="800" y="840" as="sourcePoint"/>
-                        <mxPoint x="820" y="840" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-                <!-- Activations -->
-
-                <mxCell id="activation_terminal1" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="Terminal" vertex="1">
-                    <mxGeometry x="49.5" y="200" width="21" height="450" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="activation_queuemanager1" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="QueueManager" vertex="1">
-                    <mxGeometry x="49.5" y="240" width="21" height="530" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="activation_repository1" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="DataRepository" vertex="1">
-                    <mxGeometry x="49.5" y="280" width="21" height="290" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="activation_repository2" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="DataRepository" vertex="1">
-                    <mxGeometry x="49.5" y="680" width="21" height="50" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="activation_notification" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="NotificationService" vertex="1">
-                    <mxGeometry x="49.5" y="760" width="21" height="50" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="activation_display" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[];aspect=fixed;" parent="DisplayBoard" vertex="1">
-                    <mxGeometry x="39.5" y="800" width="21" height="50" as="geometry"/>
-                </mxCell>
-
-                <!-- Scenario dividers -->
-                <mxCell id="divider1" value="Ticket Issuance Scenario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="400" y="150" width="160" height="30" as="geometry"/>
-                </mxCell>
-
-                <mxCell id="divider2" value="Client Calling Scenario" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="400" y="620" width="160" height="30" as="geometry"/>
-                </mxCell>
-
-                <!-- Divider line -->
-                <mxCell id="divider_line" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;strokeWidth=1;dashed=1;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="120" y="660" as="sourcePoint"/>
-                        <mxPoint x="1000" y="660" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-
-            </root>
-        </mxGraphModel>
-    </diagram>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.3">
+  <diagram name="Sequence Diagram - Electronic Queue System" id="SequenceDiagram">
+    <mxGraphModel dx="1426" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Client" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Клиент" vertex="1">
+          <mxGeometry height="60" width="30" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Terminal" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Терминал&#xa;самообслуживания" vertex="1">
+          <mxGeometry height="40" width="80" x="130" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="QueueManager" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Менеджер&#xa;очереди" vertex="1">
+          <mxGeometry height="40" width="80" x="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DataRepository" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Репозиторий&#xa;данных" vertex="1">
+          <mxGeometry height="40" width="80" x="430" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NotificationService" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Сервис&#xa;уведомлений" vertex="1">
+          <mxGeometry height="40" width="80" x="570" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DisplayBoard" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Информационное&#xa;табло" vertex="1">
+          <mxGeometry height="40" width="80" x="760.5" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Operator" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Оператор" vertex="1">
+          <mxGeometry height="30" width="60" x="880.5" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lifeline_client" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlActor;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="30" y="160" as="sourcePoint" />
+            <mxPoint x="30" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_terminal" edge="1" parent="1" source="FLByRcUXHD5y6mh7xL4B-4" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="159.5" y="450" as="sourcePoint" />
+            <mxPoint x="160" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_queuemanager" edge="1" parent="1" source="activation_queuemgr3" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="309.5" y="440" as="sourcePoint" />
+            <mxPoint x="310" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_datarepository" edge="1" parent="1" source="DataRepository" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;exitX=0.4;exitY=1.025;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="459.5" y="525" as="sourcePoint" />
+            <mxPoint x="460" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_notification" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="120" as="sourcePoint" />
+            <mxPoint x="600" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_display" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="790" y="120" as="sourcePoint" />
+            <mxPoint x="790" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lifeline_operator" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="910" y="120" as="sourcePoint" />
+            <mxPoint x="910" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation_notification1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1">
+          <mxGeometry height="20" width="10" x="595" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="activation_display" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1">
+          <mxGeometry height="45" width="10" x="785" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="section_ticket" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" value="1. ВЫДАЧА ТАЛОНА" vertex="1">
+          <mxGeometry height="30" width="100" x="55" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="section_calling" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" value="2. ВЫЗОВ КЛИЕНТА" vertex="1">
+          <mxGeometry height="30" width="120" x="10" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="1. Подходит к терминалу">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="25" y="195" as="sourcePoint" />
+            <mxPoint x="155" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="2. Запрос доступных услуг">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="165" y="215" as="sourcePoint" />
+            <mxPoint x="310" y="215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="3. Запросить список услуг">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="220" as="sourcePoint" />
+            <mxPoint x="460" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="4. return: Список услуг">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="455" y="250" as="sourcePoint" />
+            <mxPoint x="315.5" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="5. return: Список услуг">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="260" as="sourcePoint" />
+            <mxPoint x="160" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="6. Выбирает услугу (serviceId)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="30" y="280" as="sourcePoint" />
+            <mxPoint x="160" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg8" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="8. Создать талон (serviceId)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="320" as="sourcePoint" />
+            <mxPoint x="460" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg9" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="9. Сохранить талон (ticket)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="340" as="sourcePoint" />
+            <mxPoint x="600" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg11" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="11. return: Ticket данные">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="380" as="sourcePoint" />
+            <mxPoint x="160" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg12" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="12. Выдать талон клиенту">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="160" y="400" as="sourcePoint" />
+            <mxPoint x="30" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg13" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="13. callNextClient()">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="910" y="480" as="sourcePoint" />
+            <mxPoint x="310" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg15" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="15. return: Следующий талон">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="465" y="544.5" as="sourcePoint" />
+            <mxPoint x="315" y="544.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg17" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Обновить отображение (ticket, window)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="605" y="585" as="sourcePoint" />
+            <mxPoint x="785" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg18" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="18. Показать вызов на табло">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="790" y="620" as="sourcePoint" />
+            <mxPoint x="30" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg19" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="19. Подходит к окну оператора">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="30" y="650" as="sourcePoint" />
+            <mxPoint x="910" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-1" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" target="activation_datarepo1" value="">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="240" as="sourcePoint" />
+            <mxPoint x="310" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation_datarepo1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1">
+          <mxGeometry height="40" width="10" x="455" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-2" edge="1" parent="1" source="FLByRcUXHD5y6mh7xL4B-8" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="120" as="sourcePoint" />
+            <mxPoint x="309.5" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-3" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="160" y="120" as="sourcePoint" />
+            <mxPoint x="159.5" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="10" width="70" x="125" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="10" width="50" x="285" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-11" edge="1" parent="1" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;" target="FLByRcUXHD5y6mh7xL4B-8" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="120" as="sourcePoint" />
+            <mxPoint x="309.5" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;" value="" vertex="1">
+          <mxGeometry height="10" width="50" x="285" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="msg7" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="7. Регистрация в очереди (serviceId)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="160" y="300" as="sourcePoint" />
+            <mxPoint x="310" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg10" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;dashed=1;" value="10. return: Ticket создан">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="370" as="sourcePoint" />
+            <mxPoint x="310" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FLByRcUXHD5y6mh7xL4B-12" edge="1" parent="1" source="FLByRcUXHD5y6mh7xL4B-9" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="activation_queuemgr3" value="">
+          <mxGeometry height="750" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="370" as="sourcePoint" />
+            <mxPoint x="310" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation_queuemgr3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1">
+          <mxGeometry height="80" width="10" x="305" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="msg14" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="14. getNextInQueue()">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="315" y="510" as="sourcePoint" />
+            <mxPoint x="450" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation_notification2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1">
+          <mxGeometry height="45" width="10" x="595" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="msg16" edge="1" parent="1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" value="16. Уведомить о вызове (ticket, window)">
+          <mxGeometry height="100" relative="1" width="50" as="geometry">
+            <mxPoint x="310" y="570" as="sourcePoint" />
+            <mxPoint x="600" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>
